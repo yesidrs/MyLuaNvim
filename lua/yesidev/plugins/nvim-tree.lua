@@ -25,19 +25,21 @@ return {
 			vim.keymap.set("n", "e", "j", opts("down"))
 			vim.keymap.set("n", "a", api.node.open.edit, opts("open folder"))
 			vim.keymap.set("n", "n", api.node.navigate.parent_close, opts("close folder"))
-			vim.keymap.set("n", "k", api.fs.rename_basename, opts("close folder"))
+			vim.keymap.set("n", "k", api.fs.rename_basename, opts("rename basename"))
 			vim.keymap.set("n", "l", api.fs.create, opts("create"))
-			vim.keymap.set("n", "v", api.node.open.vertical, opts("create"))
-			vim.keymap.set("n", "h", api.node.open.horizontal, opts("create"))
+			vim.keymap.set("n", "v", api.node.open.vertical, opts("vertical split"))
+			vim.keymap.set("n", "h", api.node.open.horizontal, opts("horizontal split"))
+			vim.keymap.set("n", "o", api.node.open.preview, opts("preview"))
 		end
 
 		-- configure nvim-tree
 		nvimtree.setup({
 			on_attach = my_on_attach,
 			view = {
-				width = 30,
+				width = 35,
 				number = true,
 				relativenumber = true,
+				side = "right",
 			},
 			-- change folder arrow icons
 			renderer = {
@@ -46,6 +48,15 @@ return {
 						folder = {
 							arrow_closed = "", -- arrow when folder is closed
 							arrow_open = "", -- arrow when folder is open
+						},
+						git = {
+							unstaged = "M",
+							staged = "A",
+							unmerged = "",
+							renamed = "➜",
+							untracked = "●",
+							deleted = "D",
+							ignored = "◌",
 						},
 					},
 				},

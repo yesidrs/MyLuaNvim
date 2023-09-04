@@ -23,6 +23,7 @@ set.cursorline = true
 -- appereance
 set.termguicolors = true
 set.background = "dark"
+set.signcolumn = "yes"
 
 -- remove auto comment below
 vim.cmd([[autocmd FileType * set formatoptions-=ro]])
@@ -35,9 +36,6 @@ set.clipboard:append("unnamedplus")
 
 -- same word
 set.iskeyword:append("-")
-
--- remove delay in v mode with hjkl remap
-set.timeoutlen = 100
 
 -- split windows
 set.splitright = true -- split vertical window to the right

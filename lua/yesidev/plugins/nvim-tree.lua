@@ -30,6 +30,7 @@ return {
 			vim.keymap.set("n", "v", api.node.open.vertical, opts("vertical split"))
 			vim.keymap.set("n", "h", api.node.open.horizontal, opts("horizontal split"))
 			vim.keymap.set("n", "o", api.node.open.preview, opts("preview"))
+			vim.keymap.set("n", "bm", api.marks.bulk.move, opts("open parent"))
 		end
 
 		-- configure nvim-tree

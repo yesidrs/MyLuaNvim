@@ -16,6 +16,25 @@ return {
 
 		local lspkind = require("lspkind")
 
+		lspkind.init({
+			symbol_map = {
+				Copilot = "",
+			},
+		})
+
+		local function border(hl_name)
+			return {
+				{ "╭", hl_name },
+				{ "─", hl_name },
+				{ "╮", hl_name },
+				{ "│", hl_name },
+				{ "╯", hl_name },
+				{ "─", hl_name },
+				{ "╰", hl_name },
+				{ "│", hl_name },
+			}
+		end
+
 		-- load vs-code like snippets from plugins (e.g. friendly-snippets)
 		require("luasnip.loaders.from_vscode").lazy_load()
 
@@ -25,6 +44,21 @@ return {
 				expand = function(args)
 					luasnip.lsp_expand(args.body)
 				end,
+			},
+			completion = {
+				completeopt = "menu,menuone",
+			},
+
+			window = {
+				completion = {
+					side_padding = 1,
+					border = border("CmpDocBorder"),
+					winhighlight = "Normal:CmpPmenu,Search:PmenuSel",
+				},
+				documentation = {
+					border = border("CmpDocBorder"),
+					winhighlight = "Normal:CmpDoc",
+				},
 			},
 			mapping = cmp.mapping.preset.insert({
 				["<C-k>"] = cmp.mapping.select_prev_item(), -- previous suggestion
@@ -37,16 +71,20 @@ return {
 			}),
 			-- sources for autocompletion
 			sources = cmp.config.sources({
+				{ name = "copilot" }, -- copilot
 				{ name = "nvim_lsp" }, -- lsp
 				{ name = "luasnip" }, -- snippets
 				{ name = "buffer" }, -- text within current buffer
 				{ name = "path" }, -- file system paths
 			}),
+
 			-- configure lspkind for vs-code like icons
 			formatting = {
 				format = lspkind.cmp_format({
+					mode = "symbol_text",
 					maxwidth = 50,
 					ellipsis_char = "...",
+					symbol_map = { Copilot = "" },
 				}),
 			},
 		})

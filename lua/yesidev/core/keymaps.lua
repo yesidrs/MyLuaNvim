@@ -2,16 +2,16 @@ vim.g.mapleader = " "
 
 local keymap = vim.keymap
 
-local function map(mode, shortcut, command)
-	keymap.set(mode, shortcut, command, { noremap = true, silent = true })
+local function map(mode, shortcut, command, desc)
+	keymap.set(mode, shortcut, command, { desc = desc, noremap = true, silent = true })
 end
 
-local function noremap(shortcut, command)
-	map({ "n", "v" }, shortcut, command)
+local function noremap(shortcut, command, desc)
+	map({ "n", "v" }, shortcut, command, desc)
 end
 
-local function nmap(shortcut, command)
-	map("n", shortcut, command)
+local function nmap(shortcut, command, desc)
+	map("n", shortcut, command, desc)
 end
 
 -- ISRT layout remap
@@ -28,12 +28,12 @@ noremap("k", "e")
 noremap("K", "E")
 
 -- save
-nmap("<leader>s", ":w<CR>")
-nmap("<leader>q", ":q<CR>")
-nmap("<leader>Q", ":q!<CR>")
+nmap("<leader>s", ":w<CR>", "Save")
+nmap("<leader>q", ":q<CR>", "Close")
+nmap("<leader>Q", ":q!<CR>", "Force quit")
 
 -- source
-nmap("<leader>%", ":source%<CR>")
+nmap("<leader>%", ":source%<CR>", "Load source")
 
 -- esc noh
 nmap("<ESC>", ":noh<CR>")
@@ -42,7 +42,7 @@ nmap("<ESC>", ":noh<CR>")
 nmap("<CR>", "o<Esc>")
 
 -- window focus navigator
-nmap("<leader>n", ":wincmd h<CR>")
-nmap("<leader>e", ":wincmd j<CR>")
-nmap("<leader>a", ":wincmd l<CR>")
-nmap("<leader>u", ":wincmd k<CR>")
+nmap("<leader>n", ":wincmd h<CR>", "move panel left")
+nmap("<leader>e", ":wincmd j<CR>", "move panel down")
+nmap("<leader>a", ":wincmd l<CR>", "move panel right")
+nmap("<leader>u", ":wincmd k<CR>", "move panel up")

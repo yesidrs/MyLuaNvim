@@ -64,7 +64,7 @@ return {
 			keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
 
 			opts.desc = "show diagnostic"
-			keymap.set(bufnr, "n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
+			keymap.set("n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
 		end
 
 		-- used to enable autocompletion (assign to every lsp server config)
@@ -135,6 +135,9 @@ return {
 							"Pipelines/*.y*l",
 						},
 					},
+				},
+				format = {
+					enable = true,
 				},
 			},
 		})

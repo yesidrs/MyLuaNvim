@@ -23,9 +23,16 @@ noremap("u", "k")
 noremap("j", "n")
 noremap("J", "N")
 noremap("l", "a")
+noremap("L", "A")
+noremap("A", "L")
+noremap("N", "H")
 noremap("h", "u")
 noremap("k", "e")
 noremap("K", "E")
+
+-- horizontal scroll
+nmap("N", "20zh")
+nmap("A", "20zl")
 
 -- save
 nmap("<leader>s", ":w<CR>", "Save")
@@ -46,3 +53,6 @@ nmap("<leader>n", ":wincmd h<CR>", "move panel left")
 nmap("<leader>e", ":wincmd j<CR>", "move panel down")
 nmap("<leader>a", ":wincmd l<CR>", "move panel right")
 nmap("<leader>u", ":wincmd k<CR>", "move panel up")
+
+-- Delete all buffers
+nmap("<C-c>", ":%bd|edit#|bd#<CR>", "Delete all buffers except current one")

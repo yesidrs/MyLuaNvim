@@ -24,6 +24,7 @@ return {
 				--  "formatting.prettier.with({disabled_filetypes: {}})" (see null-ls docs)
 				formatting.stylua, -- lua formatter
 				formatting.prettier, -- yaml formatter
+				formatting.shfmt, -- bash formatter
 			},
 			-- configure format on save
 			on_attach = function(current_client, bufnr)

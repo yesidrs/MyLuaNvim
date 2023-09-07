@@ -3,7 +3,6 @@ return {
 	event = { "BufReadPre", "BufNewFile" },
 	dependencies = {
 		"hrsh7th/cmp-nvim-lsp",
-		"b0o/schemastore.nvim",
 		{
 			"smjonas/inc-rename.nvim",
 			config = true,
@@ -80,7 +79,7 @@ return {
 
 		-- hide error on screen
 		vim.diagnostic.config({
-			virtual_text = false,
+			virtual_text = true,
 		})
 
 		-- configure lua server (with special settings)
@@ -140,6 +139,12 @@ return {
 					enable = true,
 				},
 			},
+		})
+
+		-- bashls
+		lspconfig["bashls"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
 		})
 	end,
 }

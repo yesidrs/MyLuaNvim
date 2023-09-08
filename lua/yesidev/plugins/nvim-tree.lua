@@ -9,7 +9,8 @@ return {
 		vim.g.loaded_netrwPlugin = 1
 
 		-- change color for arrows in tree to light blue
-		vim.cmd([[ highlight NvimTreeIndentMarker guifg=#b4befe ]])
+		-- vim.cmd([[ highlight NvimTreeIndentMarker guifg=#b4befe ]]) -- Catppuccin theme
+		vim.cmd([[ highlight NvimTreeIndentMarker guifg=#458588 ]]) -- Gruvbox theme
 
 		local function my_on_attach(bufnr)
 			local api = require("nvim-tree.api")

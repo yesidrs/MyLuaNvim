@@ -23,7 +23,9 @@ return {
 				--  to disable file types use
 				--  "formatting.prettier.with({disabled_filetypes: {}})" (see null-ls docs)
 				formatting.stylua, -- lua formatter
-				formatting.prettier, -- yaml formatter
+				formatting.prettier.with({
+					extra_args = { "--single-quote" },
+				}), -- yaml formatter
 				formatting.shfmt, -- bash formatter
 			},
 			-- configure format on save

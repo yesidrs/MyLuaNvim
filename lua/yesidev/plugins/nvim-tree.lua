@@ -8,9 +8,11 @@ return {
 		vim.g.loaded_netrw = 1
 		vim.g.loaded_netrwPlugin = 1
 
-		-- change color for arrows in tree to light blue
+		-- change color for arrows in tree
 		-- vim.cmd([[ highlight NvimTreeIndentMarker guifg=#b4befe ]]) -- Catppuccin theme
-		vim.cmd([[ highlight NvimTreeIndentMarker guifg=#458588 ]]) -- Gruvbox theme
+		-- vim.cmd([[ highlight NvimTreeIndentMarker guifg=#458588 ]]) -- Gruvbox theme
+		vim.cmd([[ highlight NvimTreeIndentMarker guifg=#BB9AF7 ]]) -- tokyonight theme
+		-- vim.cmd([[ highlight NvimTreeIndentMarker guifg=#fca7ea ]]) -- tokyonight theme
 
 		local function my_on_attach(bufnr)
 			local api = require("nvim-tree.api")

@@ -2,7 +2,7 @@ return {
 	"lukas-reineke/indent-blankline.nvim",
 	event = { "BufReadPre", "BufNewFile" },
 	config = function()
-		-- vim.cmd([[ highlight IndentBlanklineContextChar guifg=#f38ba8 gui=nocombine]]) -- Catppuccin theme
+		-- vim.cmd([[ highlight IndentBlanklineContextChar guifg=#f5c2e7 gui=nocombine]]) -- Catppuccin theme
 
 		vim.opt.list = true
 		vim.opt.listchars:append("space:⋅")

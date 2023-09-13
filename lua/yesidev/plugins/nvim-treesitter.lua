@@ -5,6 +5,7 @@ return {
 		build = ":TSUpdate",
 		dependencies = {
 			"windwp/nvim-ts-autotag",
+			"HiPhish/nvim-ts-rainbow2",
 		},
 		config = function()
 			-- import nvim-treesitter plugin
@@ -39,6 +40,16 @@ return {
 				},
 				-- auto install above language parsers
 				auto_install = true,
+
+				rainbow = {
+					enable = true,
+					-- list of languages you want to disable the plugin for
+					disable = { "jsx", "cpp" },
+					-- Which query to use for finding delimiters
+					query = "rainbow-parens",
+					-- Highlight the entire buffer all at once
+					strategy = require("ts-rainbow").strategy.global,
+				},
 			})
 		end,
 	},

@@ -18,11 +18,70 @@ return {
 		-- import telescope-ui-select safely
 		local themes = require("telescope.themes")
 
+		-- keeps track of current `tabline` and `statusline`, so we can restore it after closing telescope
+		local temp_showtabline
+		local temp_laststatus
+
+		function _G.global_telescope_find_pre()
+			temp_showtabline = vim.o.showtabline
+			temp_laststatus = vim.o.laststatus
+			vim.o.showtabline = 0
+			vim.o.laststatus = 0
+		end
+
+		function _G.global_telescope_leave_prompt()
+			vim.o.laststatus = temp_laststatus
+			vim.o.showtabline = temp_showtabline
+		end
+
+		vim.cmd([[
+		    augroup MyAutocmds
+		      autocmd!
+		      autocmd User TelescopeFindPre lua global_telescope_find_pre()
+		      autocmd FileType TelescopePrompt autocmd BufLeave <buffer> lua global_telescope_leave_prompt()
+		    augroup END
+		  ]])
+
+		local function normalize_path(path)
+			return path:gsub("\\", "/")
+		end
+
+		local function normalize_cwd()
+			return normalize_path(vim.loop.cwd()) .. "/"
+		end
+
+		local function is_subdirectory(cwd, path)
+			return string.lower(path:sub(1, #cwd)) == string.lower(cwd)
+		end
+
+		local function split_filepath(path)
+			local normalized_path = normalize_path(path)
+			local normalized_cwd = normalize_cwd()
+			local filename = normalized_path:match("[^/]+$")
+
+			if is_subdirectory(normalized_cwd, normalized_path) then
+				local stripped_path = normalized_path:sub(#normalized_cwd + 1, -(#filename + 1))
+				return stripped_path, filename
+			else
+				local stripped_path = normalized_path:sub(1, -(#filename + 1))
+				return stripped_path, filename
+			end
+		end
+
+		local function personal_path_display(_, path)
+			local stripped_path, filename = split_filepath(path)
+			if filename == stripped_path or stripped_path == "" then
+				return filename
+			end
+			return string.format("%s ~ %s", filename, stripped_path)
+		end
+
 		-- configure telescope
 		telescope.setup({
 			-- configure custom mappings
 			defaults = {
-				path_display = { "truncate" },
+				-- path_display = { "tail" },
+				path_display = personal_path_display,
 				mappings = {
 					i = {
 						["<C-k>"] = actions.move_selection_previous, -- move to prev result
@@ -30,6 +89,16 @@ return {
 						["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist, -- send selected to quickfixlist
 					},
 				},
+				layout_strategy = "horizontal",
+				layout_config = {
+					horizontal = {
+						prompt_position = "bottom",
+						width = { padding = 0 },
+						height = { padding = 0 },
+						preview_width = 0.5,
+					},
+				},
+				-- sorting_strategy = "ascending",
 			},
 			extensions = {
 				["ui-select"] = {

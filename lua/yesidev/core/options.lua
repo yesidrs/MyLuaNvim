@@ -20,7 +20,7 @@ set.smartcase = true
 -- cursor line
 set.cursorline = true
 
--- appereance
+-- appearance
 set.termguicolors = true
 set.background = "dark"
 set.signcolumn = "yes"
@@ -41,12 +41,16 @@ set.iskeyword:append("-")
 set.splitright = true -- split vertical window to the right
 set.splitbelow = true -- split horizontal window to the bottom
 
--- turn off swapfile
+-- turn off swap file
 set.swapfile = false
 
--- no show statusline
+-- no show status line
 set.showmode = false
 
--- norg
+-- Neorg
 set.conceallevel = 2
 set.concealcursor = "nc"
+
+-- check speller
+set.spelllang = "en_us"
+set.spell = true

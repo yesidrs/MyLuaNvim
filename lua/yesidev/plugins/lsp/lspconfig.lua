@@ -18,7 +18,7 @@ return {
 		local keymap = vim.keymap -- for conciseness
 
 		-- enable keybinds only for when lsp server available
-		local on_attach = function(client, bufnr)
+		local on_attach = function(bufnr)
 			-- keybind options
 			local opts = { noremap = true, silent = true, buffer = bufnr }
 
@@ -33,7 +33,7 @@ return {
 			keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts) -- show lsp definitions
 
 			opts.desc = "Show LSP implementations"
-			keymap.set("n", "gi", "<cmd>Telescope lsp_implementations<CR>", opts) -- show lsp implementations
+			keymap.set("n", "gI", "<cmd>Telescope lsp_implementations<CR>", opts) -- show lsp implementations
 
 			opts.desc = "Show LSP type definitions"
 			keymap.set("n", "gt", "<cmd>Telescope lsp_type_definitions<CR>", opts) -- show lsp type definitions

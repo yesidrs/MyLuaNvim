@@ -4,7 +4,7 @@ return {
 	version = "*",
 	config = function()
 		local keymap = vim.keymap -- for conciseness
-
+		local bufferline = require("bufferline")
 		require("bufferline").setup({
 			options = {
 				mode = "tabs",
@@ -14,6 +14,9 @@ return {
 					local icon = level:match("error") and " 󰅙" or " "
 					return " " .. count .. icon
 				end,
+				style_preset = {
+					bufferline.style_preset.no_bold,
+				},
 				offsets = {
 					{
 						filetype = "NvimTree",
@@ -29,13 +32,7 @@ return {
 
 		local opts = { noremap = true, silent = true }
 
-		opts.desc = "Tab next"
-		keymap.set("n", "ta", "<cmd>BufferLineCycleNext<CR>", opts) -- show definition, references
-
-		opts.desc = "Tab prev"
-		keymap.set("n", "tn", "<cmd>BufferLineCyclePrev<CR>", opts) -- show definition, references
-
 		opts.desc = "close all tabs"
-		keymap.set("n", "te", "<cmd>BufferLineCloseOthers<CR>", opts) -- show definition, references
+		keymap.set("n", "tt", "<cmd>BufferLineCloseOthers<CR>", opts) -- show definition, references
 	end,
 }

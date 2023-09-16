@@ -25,7 +25,7 @@ return {
 					comments = { "italic" }, -- Change the style of comments
 					conditionals = { "italic" },
 					loops = {},
-					functions = { "italic" },
+					functions = { "bold" },
 					keywords = {},
 					strings = { "italic" },
 					variables = {},

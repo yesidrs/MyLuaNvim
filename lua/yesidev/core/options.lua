@@ -46,3 +46,7 @@ set.swapfile = false
 
 -- no show statusline
 set.showmode = false
+
+-- norg
+set.conceallevel = 2
+set.concealcursor = "nc"

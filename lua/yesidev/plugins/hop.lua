@@ -19,9 +19,9 @@ return {
 		vim.keymap.set("n", "se", "<cmd>HopChar2AC<CR>", opts)
 
 		opts.desc = "HopLine"
-		vim.keymap.set("n", "sn", "<cmd>HopLine<CR>", opts)
+		vim.keymap.set("n", "sn", "<cmd>HopChar1CurrentLineBC<CR>", opts)
 
 		opts.desc = "HopCurrentLine"
-		vim.keymap.set("n", "sa", "<cmd>HopChar1CurrentLine<CR>", opts)
+		vim.keymap.set("n", "sa", "<cmd>HopChar1CurrentLineAC<CR>", opts)
 	end,
 }

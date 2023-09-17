@@ -52,5 +52,5 @@ set.conceallevel = 2
 set.concealcursor = "nc"
 
 -- check speller
-set.spelllang = "en_us"
+set.spelllang = "en_us,es"
 set.spell = true

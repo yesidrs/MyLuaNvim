@@ -32,7 +32,13 @@ return {
 
 		local opts = { noremap = true, silent = true }
 
+		opts.desc = "Tab next"
+		keymap.set("n", "<tab>", "<cmd>BufferLineCycleNext<CR>", opts)
+
+		opts.desc = "Tab prev"
+		keymap.set("n", "<S-tab>", "<cmd>BufferLineCyclePrev<CR>", opts)
+
 		opts.desc = "close all tabs"
-		keymap.set("n", "tt", "<cmd>BufferLineCloseOthers<CR>", opts) -- show definition, references
+		keymap.set("n", "tt", "<cmd>BufferLineCloseOthers<CR>", opts)
 	end,
 }

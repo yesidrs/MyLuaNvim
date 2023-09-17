@@ -19,12 +19,5 @@ return {
 				},
 			},
 		})
-
-		-- keybindings
-		local keymap = vim.keymap
-		local opts = { noremap = true, silent = true }
-
-		opts.desc = "Show neorg keybindings"
-		keymap.set("n", "<leader>o", "<cmd>Neorg keybind norg<CR>", opts) -- show definition, references
 	end,
 }

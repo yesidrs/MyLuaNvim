@@ -8,13 +8,14 @@ return {
 				["core.defaults"] = {}, -- Loads default behaviour
 				["core.concealer"] = {}, -- Adds pretty icons to your documents
 				["core.integrations.nvim-cmp"] = {},
+				["core.summary"] = {},
 				["core.dirman"] = { -- Manages Neorg workspaces
 					config = {
 						workspaces = {
 							notes = "~/neorg/notes",
 							knowledge = "~/neorg/knowledge",
+							work = "~/neorg/work",
 						},
-						default_workspace = "notes",
 					},
 				},
 			},

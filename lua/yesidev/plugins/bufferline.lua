@@ -3,7 +3,6 @@ return {
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	version = "*",
 	config = function()
-		local keymap = vim.keymap -- for conciseness
 		local bufferline = require("bufferline")
 		require("bufferline").setup({
 			options = {
@@ -30,6 +29,7 @@ return {
 			},
 		})
 
+		local keymap = vim.keymap -- for conciseness
 		local opts = { noremap = true, silent = true }
 
 		opts.desc = "Tab next"
@@ -40,5 +40,8 @@ return {
 
 		opts.desc = "close all tabs"
 		keymap.set("n", "tt", "<cmd>BufferLineCloseOthers<CR>", opts)
+
+		opts.desc = "close all tabs"
+		keymap.set("n", "te", "<cmd>bd<CR>", opts)
 	end,
 }

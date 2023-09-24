@@ -42,6 +42,6 @@ return {
 		keymap.set("n", "tt", "<cmd>BufferLineCloseOthers<CR>", opts)
 
 		opts.desc = "close all tabs"
-		keymap.set("n", "te", "<cmd>bd<CR>", opts)
+		keymap.set("n", "tc", "<cmd>bd<CR>", opts)
 	end,
 }

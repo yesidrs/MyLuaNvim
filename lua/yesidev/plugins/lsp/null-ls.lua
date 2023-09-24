@@ -48,5 +48,23 @@ return {
 				end
 			end,
 		})
+
+		local opts = { noremap = true, silent = true }
+		local callback = function(bufnr)
+			vim.lsp.buf.format({
+				filter = function(client)
+					--  only use null-ls for formatting instead of lsp server
+					return client.name == "null-ls"
+				end,
+				bufnr = bufnr,
+			})
+		end
+
+		opts.desc = "format file"
+		vim.keymap.set("n", "ff", callback, opts)
+
+		opts.desc = "format selected"
+		vim.keymap.set("v", "f", callback, opts)
+		-- vim.keymap.set("v", "f", "<cmd>lua vim.lsp.buf.format{async=true}<CR>", opts)
 	end,
 }

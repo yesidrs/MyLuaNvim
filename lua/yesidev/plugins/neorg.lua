@@ -25,8 +25,15 @@ return {
 			},
 		})
 
-		vim.keymap.set("n", "<localleader>c", ":Neorg exec cursor<CR>", { silent = true }) -- just this block or blocks within heading section
-		vim.keymap.set("n", "<localleader>cf", ":Neorg exec current-file<CR>", { silent = true }) -- whole file
-		vim.keymap.set("n", "<localleader>cl", ":Neorg exec current-file<CR>", { silent = true }) -- whole file
+		local opts = { noremap = true, silent = true }
+
+		opts.desc = "Exec current code"
+		vim.keymap.set("n", "<localleader>cc", ":Neorg exec cursor<CR>", opts) -- just this block or blocks within heading section
+
+		opts.desc = "Exec all code blocks"
+		vim.keymap.set("n", "<localleader>cf", ":Neorg exec current-file<CR>", opts) -- whole file
+
+		opts.desc = "Clear results"
+		vim.keymap.set("n", "<localleader>cl", ":Neorg exec clear<CR>", opts) -- whole file
 	end,
 }

@@ -50,10 +50,10 @@ nmap("<ESC>", ":noh<CR>")
 nmap("<CR>", "o<Esc>")
 
 -- window focus navigator
-nmap("<leader>n", ":wincmd h<CR>", "move panel left")
-nmap("<leader>e", ":wincmd j<CR>", "move panel down")
-nmap("<leader>a", ":wincmd l<CR>", "move panel right")
-nmap("<leader>u", ":wincmd k<CR>", "move panel up")
+nmap("<leader>n", ":wincmd h<CR>", "Move panel left")
+nmap("<leader>e", ":wincmd j<CR>", "Move panel down")
+nmap("<leader>a", ":wincmd l<CR>", "Move panel right")
+nmap("<leader>u", ":wincmd k<CR>", "Move panel up")
 
 -- Delete all buffers
 nmap("<C-c>", ":%bd|edit#|bd#<CR>", "Delete all buffers except current one")

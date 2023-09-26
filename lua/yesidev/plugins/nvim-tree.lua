@@ -25,14 +25,11 @@ return {
 			api.config.mappings.default_on_attach(bufnr)
 
 			-- Desactiva las teclas "e" y "a"
-			vim.keymap.set("n", "e", "j", opts("down"))
-			vim.keymap.set("n", "a", api.node.open.edit, opts("open folder"))
-			vim.keymap.set("n", "n", api.node.navigate.parent_close, opts("close folder"))
-			vim.keymap.set("n", "k", api.fs.rename_basename, opts("rename basename"))
-			vim.keymap.set("n", "l", api.fs.create, opts("create"))
+			vim.keymap.set("n", "l", api.node.open.edit, opts("open folder"))
+			vim.keymap.set("n", "h", api.node.navigate.parent_close, opts("close folder"))
 			vim.keymap.set("n", "v", api.node.open.vertical, opts("vertical split"))
-			vim.keymap.set("n", "h", api.node.open.horizontal, opts("horizontal split"))
-			vim.keymap.set("n", "o", api.node.open.preview, opts("preview"))
+			vim.keymap.set("n", "w", api.node.open.horizontal, opts("horizontal split"))
+			-- vim.keymap.set("n", "o", api.node.open.preview, opts("preview"))
 			vim.keymap.set("n", "bm", api.marks.bulk.move, opts("open parent"))
 			vim.keymap.set("n", "t", api.node.open.tab, opts("open new tab"))
 		end

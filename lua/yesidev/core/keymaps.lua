@@ -15,22 +15,6 @@ local function nmap(shortcut, command, desc)
 	map("n", shortcut, command, desc)
 end
 
--- ISRT layout remap
-noremap("n", "h")
-noremap("e", "j")
-noremap("a", "l")
-noremap("u", "k")
-
-noremap("j", "n")
-noremap("J", "N")
-noremap("l", "a")
-noremap("L", "A")
-noremap("A", "L")
-noremap("N", "H")
-noremap("h", "u")
-noremap("k", "e")
-noremap("K", "E")
-
 -- horizontal scroll
 nmap("N", "20zh")
 nmap("A", "20zl")

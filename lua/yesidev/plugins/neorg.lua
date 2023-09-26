@@ -9,7 +9,13 @@ return {
 		require("neorg").setup({
 			load = {
 				["core.defaults"] = {}, -- Loads default behaviour
-				["core.concealer"] = {}, -- Adds pretty icons to your documents
+				["core.concealer"] = {
+					config = {
+						-- folds = false,
+						icon_preset = "varied",
+						init_open_folds = "never",
+					},
+				}, -- Adds pretty icons to your documents
 				["core.integrations.nvim-cmp"] = {},
 				["core.summary"] = {},
 				["external.exec"] = {},
@@ -28,12 +34,18 @@ return {
 		local opts = { noremap = true, silent = true }
 
 		opts.desc = "Exec current code"
-		vim.keymap.set("n", "<localleader>cc", ":Neorg exec cursor<CR>", opts) -- just this block or blocks within heading section
+		vim.keymap.set("n", "<localleader>cc", ":Neorg exec cursor<CR>", opts)
 
 		opts.desc = "Exec all code blocks"
-		vim.keymap.set("n", "<localleader>cf", ":Neorg exec current-file<CR>", opts) -- whole file
+		vim.keymap.set("n", "<localleader>cf", ":Neorg exec current-file<CR>", opts)
 
 		opts.desc = "Clear results"
-		vim.keymap.set("n", "<localleader>cl", ":Neorg exec clear<CR>", opts) -- whole file
+		vim.keymap.set("n", "<localleader>cl", ":Neorg exec clear<CR>", opts)
+
+		opts.desc = "Generate summary"
+		vim.keymap.set("n", "<localleader>gs", ":Neorg generate-workspace-summary<CR>", opts)
+
+		opts.desc = "Inject metadata"
+		vim.keymap.set("n", "<localleader>im", ":Neorg inject-metadata<CR>", opts)
 	end,
 }

@@ -13,15 +13,15 @@ return {
 
 		-- set keybinds
 		opts.desc = "HopChar before cursor"
-		vim.keymap.set("n", "su", "<cmd>HopChar2BC<CR>", opts)
+		vim.keymap.set("n", "sk", "<cmd>HopChar2BC<CR>", opts)
 
 		opts.desc = "HopChar after cursor"
-		vim.keymap.set("n", "se", "<cmd>HopChar2AC<CR>", opts)
+		vim.keymap.set("n", "sj", "<cmd>HopChar2AC<CR>", opts)
 
 		opts.desc = "HopLine"
-		vim.keymap.set("n", "sn", "<cmd>HopChar1CurrentLineBC<CR>", opts)
+		vim.keymap.set("n", "sh", "<cmd>HopChar1CurrentLineBC<CR>", opts)
 
 		opts.desc = "HopCurrentLine"
-		vim.keymap.set("n", "sa", "<cmd>HopChar1CurrentLineAC<CR>", opts)
+		vim.keymap.set("n", "sl", "<cmd>HopChar1CurrentLineAC<CR>", opts)
 	end,
 }

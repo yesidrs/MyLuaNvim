@@ -16,16 +16,16 @@ local function nmap(shortcut, command, desc)
 end
 
 -- horizontal scroll
-nmap("N", "20zh")
-nmap("A", "20zl")
+nmap("H", "20zh")
+nmap("L", "20zl")
 
 -- save
-nmap("<leader>s", ":w<CR>", "Save")
-nmap("<leader>q", ":q<CR>", "Close")
-nmap("<leader>Q", ":q!<CR>", "Force quit")
+nmap("<leader>s", ":w<CR>", "save")
+nmap("<leader>q", ":q<CR>", "close")
+nmap("<leader>Q", ":q!<CR>", "force quit")
 
 -- source
-nmap("<leader>%", ":source%<CR>", "Load source")
+nmap("<leader>%", ":source%<CR>", "load source")
 
 -- esc noh
 nmap("<ESC>", ":noh<CR>")
@@ -33,11 +33,8 @@ nmap("<ESC>", ":noh<CR>")
 -- enter in n mode
 nmap("<CR>", "o<Esc>")
 
--- window focus navigator
-nmap("<leader>n", ":wincmd h<CR>", "Move panel left")
-nmap("<leader>e", ":wincmd j<CR>", "Move panel down")
-nmap("<leader>a", ":wincmd l<CR>", "Move panel right")
-nmap("<leader>u", ":wincmd k<CR>", "Move panel up")
-
--- Delete all buffers
-nmap("<C-c>", ":%bd|edit#|bd#<CR>", "Delete all buffers except current one")
+-- tmux navigator
+nmap("<C-h>", "<cmd>tmuxNavigateLeft<CR>", "window left")
+nmap("<C-j>", "<cmd>tmuxNavigateDown<CR>", "window down")
+nmap("<C-k>", "<cmd>tmuxNavigateUp<CR>", "window up")
+nmap("<C-l>", "<cmd>tmuxNavigateRight<CR>", "window right")

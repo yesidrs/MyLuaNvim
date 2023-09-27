@@ -29,7 +29,7 @@ return {
 			vim.keymap.set("n", "h", api.node.navigate.parent_close, opts("close folder"))
 			vim.keymap.set("n", "v", api.node.open.vertical, opts("vertical split"))
 			vim.keymap.set("n", "w", api.node.open.horizontal, opts("horizontal split"))
-			-- vim.keymap.set("n", "o", api.node.open.preview, opts("preview"))
+			vim.keymap.set("n", "o", api.node.open.preview, opts("preview"))
 			vim.keymap.set("n", "bm", api.marks.bulk.move, opts("open parent"))
 			vim.keymap.set("n", "t", api.node.open.tab, opts("open new tab"))
 		end
@@ -86,6 +86,6 @@ return {
 		local keymap = vim.keymap -- for conciseness
 
 		-- keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle file explorer" }) -- toggle file explorer
-		keymap.set("n", "<leader>e", "<cmd>NvimTreeFindFileToggle<CR>", { desc = "Toggle file explorer" }) -- toggle file explorer on current file
+		keymap.set("n", "<leader>e", "<cmd>NvimTreeFindFileToggle<CR>", { desc = "toggle file explorer" }) -- toggle file explorer on current file
 	end,
 }

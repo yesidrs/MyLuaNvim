@@ -32,16 +32,16 @@ return {
 		local keymap = vim.keymap -- for conciseness
 		local opts = { noremap = true, silent = true }
 
-		opts.desc = "Tab next"
+		opts.desc = "tab next"
 		keymap.set("n", "<tab>", "<cmd>BufferLineCycleNext<CR>", opts)
 
-		opts.desc = "Tab prev"
+		opts.desc = "tab prev"
 		keymap.set("n", "<S-tab>", "<cmd>BufferLineCyclePrev<CR>", opts)
 
 		opts.desc = "close all tabs"
 		keymap.set("n", "tt", "<cmd>BufferLineCloseOthers<CR>", opts)
 
 		opts.desc = "close all tabs"
-		keymap.set("n", "tc", "<cmd>bd<CR>", opts)
+		keymap.set("n", "<C-c>", "<cmd>bd<CR>", opts)
 	end,
 }

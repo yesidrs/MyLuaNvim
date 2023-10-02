@@ -13,7 +13,7 @@ return {
 					config = {
 						-- folds = false,
 						icon_preset = "varied",
-						init_open_folds = "never",
+						init_open_folds = "always", -- auto, never, always
 					},
 				}, -- Adds pretty icons to your documents
 				["core.integrations.nvim-cmp"] = {},

@@ -4,14 +4,11 @@ local set = vim.opt
 set.number = true
 set.relativenumber = true
 
--- tabs & indentatio
+-- tabs & indentation
 set.tabstop = 2
 set.shiftwidth = 2
 set.expandtab = true
 set.autoindent = true
-
--- line wrapping
-set.wrap = false
 
 -- seach settings
 set.ignorecase = true
@@ -54,3 +51,9 @@ set.concealcursor = "nc"
 -- check speller
 set.spelllang = "en_us,es"
 set.spell = true
+
+-- change line numbers color
+-- vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "#9490cc" })
+-- vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "#9490cc" })
+vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "#5c597f" })
+vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "#5c597f" })

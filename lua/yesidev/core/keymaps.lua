@@ -15,10 +15,6 @@ local function nmap(shortcut, command, desc)
 	map("n", shortcut, command, desc)
 end
 
--- horizontal scroll
-nmap("H", "20zh")
-nmap("L", "20zl")
-
 -- save
 nmap("<leader>s", ":w<CR>", "save")
 nmap("<leader>q", ":q<CR>", "close")

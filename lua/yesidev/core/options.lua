@@ -53,7 +53,7 @@ set.spelllang = "en_us,es"
 set.spell = true
 
 -- change line numbers color
--- vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "#9490cc" })
--- vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "#9490cc" })
-vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "#5c597f" })
-vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "#5c597f" })
+-- a2a9c1
+-- cdd6f4
+vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "#a2a9c1" })
+vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "#a2a9c1" })

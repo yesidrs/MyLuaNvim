@@ -16,7 +16,7 @@ local function nmap(shortcut, command, desc)
 end
 
 -- save
-nmap("<leader>s", ":w<CR>", "save")
+nmap("<leader>w", ":w<CR>", "save")
 nmap("<leader>q", ":q<CR>", "close")
 nmap("<leader>Q", ":q!<CR>", "force quit")
 

@@ -47,5 +47,10 @@ return {
 
 		opts.desc = "Inject metadata"
 		vim.keymap.set("n", "<localleader>im", ":Neorg inject-metadata<CR>", opts)
+
+		--[[ vim.api.nvim_create_autocmd("BufRead", {
+			pattern = "*.norg",
+			command = "zR",
+		}) ]]
 	end,
 }

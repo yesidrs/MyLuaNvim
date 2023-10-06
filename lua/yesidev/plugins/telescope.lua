@@ -6,7 +6,6 @@ return {
 		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 		"nvim-telescope/telescope-ui-select.nvim",
 		"nvim-tree/nvim-web-devicons",
-		"ThePrimeagen/harpoon",
 	},
 	config = function()
 		-- import telescope plugin safely
@@ -109,7 +108,6 @@ return {
 
 		telescope.load_extension("fzf")
 		telescope.load_extension("ui-select")
-		telescope.load_extension("harpoon")
 
 		-- set keymaps
 		local keymap = vim.keymap -- for conciseness
@@ -119,7 +117,6 @@ return {
 		keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "Find string in cwd" }) -- find string in current working directory as you type
 		keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", { desc = "Find string under cursor in cwd" }) -- find string under cursor in current working directory
 		keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "Show open buffers" }) -- list open buffers in current neovim instance
-		keymap.set("n", "<leader>hh", "<cmd>Telescope harpoon marks<cr>", { desc = "Show harpoon marks" }) -- show harpoon marks
 		keymap.set("n", "<leader>gc", "<cmd>Telescope git_commits<cr>", { desc = "Show git commits" }) -- list all git commits (use <cr> to checkout) ["gc" for git commits]
 		keymap.set(
 			"n",

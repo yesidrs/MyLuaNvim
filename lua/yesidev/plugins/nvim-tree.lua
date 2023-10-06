@@ -39,12 +39,14 @@ return {
 			on_attach = my_on_attach,
 			view = {
 				width = 35,
-				number = true,
 				relativenumber = true,
 				side = "right",
 			},
 			-- change folder arrow icons
 			renderer = {
+				indent_markers = {
+					enable = true,
+				},
 				icons = {
 					glyphs = {
 						folder = {

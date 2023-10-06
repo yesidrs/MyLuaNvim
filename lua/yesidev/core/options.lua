@@ -33,6 +33,7 @@ set.clipboard:append("unnamedplus")
 
 -- same word
 set.iskeyword:append("-")
+set.iskeyword:append("_")
 
 -- split windows
 set.splitright = true -- split vertical window to the right

@@ -6,6 +6,7 @@ return {
 		dependencies = {
 			"windwp/nvim-ts-autotag",
 			"HiPhish/nvim-ts-rainbow2",
+			"nvim-treesitter/nvim-treesitter-textobjects",
 		},
 		config = function()
 			-- import nvim-treesitter plugin
@@ -40,6 +41,27 @@ return {
 				},
 				-- auto install above language parsers
 				auto_install = true,
+
+				textobjects = {
+					select = {
+						enable = true,
+						lookahead = true, -- Automatically jump forward to textobj, similar to targets.vim
+						keymaps = {
+							-- You can use the capture groups defined in textobjects.scm
+							["aa"] = "@parameter.outer",
+							["ia"] = "@parameter.inner",
+							["af"] = "@function.outer",
+							["if"] = "@function.inner",
+							["ac"] = "@class.outer",
+							["ic"] = "@class.inner",
+							["ii"] = "@conditional.inner",
+							["ai"] = "@conditional.outer",
+							["il"] = "@loop.inner",
+							["al"] = "@loop.outer",
+							["at"] = "@comment.outer",
+						},
+					},
+				},
 
 				rainbow = {
 					enable = true,

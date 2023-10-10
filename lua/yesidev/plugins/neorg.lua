@@ -22,8 +22,9 @@ return {
 				["core.dirman"] = { -- Manages Neorg workspaces
 					config = {
 						workspaces = {
-							neorg = "~/neorg",
+							main = "~/neorg",
 						},
+						default_workspace = "main",
 					},
 				},
 			},
@@ -46,8 +47,8 @@ return {
 		opts.desc = "Inject metadata"
 		vim.keymap.set("n", "<localleader>gm", ":Neorg inject-metadata<CR>", opts)
 
-		opts.desc = "Inject metadata"
-		vim.keymap.set("n", "<leader>n", ":Neorg workspace neorg<CR>", opts)
+		opts.desc = "go to neorg workspace"
+		vim.keymap.set("n", "<leader>n", ":Neorg index<CR>", opts)
 
 		--[[ vim.api.nvim_create_autocmd("BufRead", {
 			pattern = "*.norg",

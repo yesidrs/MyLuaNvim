@@ -33,7 +33,6 @@ set.clipboard:append("unnamedplus")
 
 -- same word
 set.iskeyword:append("-")
-set.iskeyword:append("_")
 
 -- split windows
 set.splitright = true -- split vertical window to the right
@@ -54,7 +53,5 @@ set.spelllang = "en_us,es"
 set.spell = true
 
 -- change line numbers color
--- a2a9c1
--- cdd6f4
 vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "#a2a9c1" })
 vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "#a2a9c1" })

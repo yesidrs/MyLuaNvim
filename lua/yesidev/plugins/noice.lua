@@ -1,5 +1,4 @@
 return {
-
 	"folke/noice.nvim",
 	event = "VeryLazy",
 	dependencies = {
@@ -25,6 +24,16 @@ return {
 			timeout = 3000,
 		})
 
-		require("noice").setup({})
+		require("noice").setup({
+			routes = {
+				{
+					filter = {
+						event = "msg_show",
+						kind = "",
+					},
+					opts = { skip = true },
+				},
+			},
+		})
 	end,
 }

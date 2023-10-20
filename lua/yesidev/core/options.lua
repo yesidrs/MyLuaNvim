@@ -44,10 +44,6 @@ set.swapfile = false
 -- no show status line
 set.showmode = false
 
--- Neorg
-set.conceallevel = 2
-set.concealcursor = "nc"
-
 -- check speller
 set.spelllang = "en_us,es"
 set.spell = true

@@ -24,6 +24,7 @@ return {
 				"terraformls",
 				"azure_pipelines_ls",
 				"bashls",
+        "jsonls"
 			},
 			-- auto-install configured servers (with lspconfig)
 			automatic_installation = true, -- not the same as ensure_installed

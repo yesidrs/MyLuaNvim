@@ -7,7 +7,8 @@ return {
 		require("bufferline").setup({
 			options = {
 				mode = "buffers",
-				-- separator_style = "slope",
+				separator_style = "slant",
+				-- separator_style = { "", "" }, --"slant" | "thick" | "thin" | { '', '' }`
 				diagnostics = "nvim_lsp",
 				diagnostics_indicator = function(count, level)
 					local icon = level:match("error") and " 󰅙" or " "

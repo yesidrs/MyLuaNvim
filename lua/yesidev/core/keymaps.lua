@@ -16,15 +16,15 @@ local function nmap(shortcut, command, desc)
 end
 
 -- save
-nmap("<leader>w", ":w<CR>", "save")
-nmap("<leader>q", ":q<CR>", "close")
-nmap("<leader>Q", ":q!<CR>", "force quit")
+nmap("<leader>w", "<cmd>w<CR>", "save")
+nmap("<leader>q", "<cmd>q<CR>", "close")
+nmap("<leader>Q", "<cmd>q!<CR>", "force quit")
 
 -- source
 nmap("<leader>%", ":source%<CR>", "load source")
 
 -- esc noh
-nmap("<ESC>", ":noh<CR>")
+nmap("<ESC>", "<cmd>noh<CR>")
 
 -- enter in n mode
 nmap("<CR>", "o<Esc>")

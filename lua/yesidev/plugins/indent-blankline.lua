@@ -1,19 +1,8 @@
 return {
 	"lukas-reineke/indent-blankline.nvim",
 	event = { "BufReadPre", "BufNewFile" },
+	main = "ibl",
 	config = function()
-		-- vim.cmd([[ highlight IndentBlanklineContextChar guifg=#f5c2e7 gui=nocombine]]) -- Catppuccin theme
-
-		vim.opt.list = true
-		vim.opt.listchars:append("space:⋅")
-
-		require("indent_blankline").setup({
-			-- for example, context is off by default, use this to turn it on
-			show_current_context = true,
-			show_current_context_start = true,
-			space_char_blankline = " ",
-			max_indent_increase = 1,
-			show_trailing_blankline_indent = false,
-		})
+		require("ibl").setup({})
 	end,
 }

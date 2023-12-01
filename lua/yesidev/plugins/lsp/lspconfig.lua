@@ -80,7 +80,7 @@ return {
 
 		-- hide error on screen
 		vim.diagnostic.config({
-			virtual_text = true,
+			virtual_text = false,
 		})
 
 		-- configure lua server (with special settings)

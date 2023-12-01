@@ -15,6 +15,11 @@ local function nmap(shortcut, command, desc)
 	map("n", shortcut, command, desc)
 end
 
+
+local function imap(shortcut, command, desc)
+	map("i", shortcut, command, desc)
+end
+
 -- save
 nmap("<leader>w", "<cmd>w<CR>", "save")
 nmap("<leader>q", "<cmd>q<CR>", "close")
@@ -34,3 +39,6 @@ nmap("<C-h>", "<cmd>tmuxNavigateLeft<CR>", "window left")
 nmap("<C-j>", "<cmd>tmuxNavigateDown<CR>", "window down")
 nmap("<C-k>", "<cmd>tmuxNavigateUp<CR>", "window up")
 nmap("<C-l>", "<cmd>tmuxNavigateRight<CR>", "window right")
+
+-- escape in insert mode
+imap("kk", "<ESC>", "escape in insert mode")

@@ -7,7 +7,7 @@ return {
 		}
 
 		require("gen").prompts["DevOps ask!"] = {
-			prompt = "You Are a senior devops engineer, acting as an assistant. You offer help with cloud technologies like: Terraform, AWS, Kubernetes, Python, Azure DevOps yaml pipelines. You answer with code examples when possible. $input:\n$text",
+			prompt = "You Are a senior devops engineer, acting as an assistant. You offer help with cloud technologies like: Terraform, AWS, Kubernetes, Python, Azure DevOps yaml pipelines. You answer with code examples when possible and your answer will be in spanish language. $input:\n$text",
 			replace = false,
 		}
 

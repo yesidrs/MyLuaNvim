@@ -130,6 +130,7 @@ return {
 							"/*.azure*",
 							"Azure-Pipelines/**/*.y*l",
 							"Pipelines/*.y*l",
+							"*.y*l",
 						},
 					},
 				},

@@ -14,9 +14,7 @@ return {
 		-- import cmp-nvim-lsp plugin
 		local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
-		require("inc_rename").setup({
-			input_buffer_type = "dressing",
-		})
+		require("inc_rename").setup()
 
 		local keymap = vim.keymap -- for conciseness
 
@@ -80,7 +78,7 @@ return {
 
 		-- hide error on screen
 		vim.diagnostic.config({
-			virtual_text = false,
+			virtual_text = true,
 		})
 
 		-- configure lua server (with special settings)

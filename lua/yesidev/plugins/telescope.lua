@@ -80,6 +80,7 @@ return {
 			-- configure custom mappings
 			defaults = {
 				-- path_display = { "tail" },
+        file_ignore_patterns = { "node_modules", ".git" },
 				path_display = personal_path_display,
 				mappings = {
 					i = {

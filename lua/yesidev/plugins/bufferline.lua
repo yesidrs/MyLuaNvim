@@ -7,7 +7,7 @@ return {
 		require("bufferline").setup({
 			options = {
 				mode = "buffers",
-				separator_style = "thin",
+				separator_style = "slant",
 				-- separator_style = { "", "" }, --"slant" | "thick" | "thin" | { '', '' }`
 				diagnostics = "nvim_lsp",
 				diagnostics_indicator = function(count, level)
@@ -40,7 +40,7 @@ return {
 		keymap.set("n", "<S-tab>", "<cmd>BufferLineCyclePrev<CR>", opts)
 
 		opts.desc = "close all tabs"
-		keymap.set("n", "tt", "<cmd>BufferLineCloseOthers<CR>", opts)
+		keymap.set("n", "t", "<cmd>BufferLineCloseOthers<CR>", opts)
 
 		opts.desc = "close actual tab"
 		keymap.set("n", "<C-c>", "<cmd>bd<CR>", opts)

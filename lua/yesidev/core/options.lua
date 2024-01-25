@@ -15,7 +15,7 @@ set.ignorecase = true
 set.smartcase = true
 
 -- cursor line
-set.cursorline = true
+set.cursorline = false
 
 -- appearance
 set.termguicolors = true

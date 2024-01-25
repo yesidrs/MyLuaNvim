@@ -81,6 +81,17 @@ return {
 			virtual_text = true,
 		})
 
+		vim.api.nvim_exec(
+			[[
+    augroup azure_pipelines_config
+        autocmd!
+        autocmd BufEnter,BufRead *.ya?ml lua vim.diagnostic.config({ virtual_text = false })
+        autocmd BufLeave *.ya?ml lua vim.diagnostic.config({ virtual_text = true })
+    augroup END
+      ]],
+			false
+		)
+
 		-- configure lua server (with special settings)
 		lspconfig["lua_ls"].setup({
 			capabilities = capabilities,

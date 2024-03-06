@@ -85,8 +85,10 @@ return {
 			[[
     augroup azure_pipelines_config
         autocmd!
-        autocmd BufEnter,BufRead *.ya?ml lua vim.diagnostic.config({ virtual_text = false })
-        autocmd BufLeave *.ya?ml lua vim.diagnostic.config({ virtual_text = true })
+        autocmd BufEnter,BufRead *.yaml lua vim.diagnostic.config({ virtual_text = false })
+        autocmd BufEnter,BufRead *.yml lua vim.diagnostic.config({ virtual_text = false })
+        autocmd BufLeave *.yml lua vim.diagnostic.config({ virtual_text = true })
+        autocmd BufLeave *.yaml lua vim.diagnostic.config({ virtual_text = true })
     augroup END
       ]],
 			false

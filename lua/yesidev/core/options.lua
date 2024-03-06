@@ -22,6 +22,7 @@ set.termguicolors = true
 set.background = "dark"
 set.signcolumn = "yes"
 
+
 -- remove auto comment below
 vim.cmd([[autocmd FileType * set formatoptions-=ro]])
 

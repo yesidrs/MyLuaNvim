@@ -10,7 +10,7 @@ return {
 				underline = true,
 				bold = true,
 				italic = {
-					strings = true,
+					strings = false,
 					comments = true,
 					operators = false,
 					folds = true,
@@ -25,11 +25,11 @@ return {
 				palette_overrides = {},
 				overrides = {},
 				dim_inactive = false,
-				transparent_mode = false,
+				transparent_mode = true,
 			})
 
 			-- load the colorscheme here
-			-- vim.cmd.colorscheme("gruvbox")
+			vim.cmd.colorscheme("gruvbox")
 		end,
 	},
 }

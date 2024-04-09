@@ -165,5 +165,10 @@ return {
 		lspconfig["tsserver"].setup({
 			capabilities = capabilities,
 		})
+
+		-- configure python server with plugin
+		lspconfig["pyright"].setup({
+      capabilities = capabilities,
+		})
 	end,
 }

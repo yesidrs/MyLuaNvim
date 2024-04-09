@@ -18,7 +18,8 @@ return {
 				"stylua", -- lua formatter
 				"isort", -- python formatter
 				"black", -- python formatter
-				"pylint", -- python linter
+				"mypy", -- python linter
+				"ruff", -- python linter
 				"eslint_d", -- js linter
 				"shfmt", -- bash formatter
 			},
@@ -47,11 +48,13 @@ return {
 				-- formatters
 				formatting.stylua, -- lua formatter
 				formatting.isort,
-				formatting.black,
+				formatting.black.with({
+					extra_args = { "--line-length", "80" },
+				}), -- python formatter
 				formatting.shfmt,
 
 				-- linters
-				diagnostics.pylint,
+				diagnostics.ruff, -- python linter
 				diagnostics.eslint_d.with({ -- js/ts linter
 					condition = function(utils)
 						return utils.root_has_file({ ".eslintrc.js", ".eslintrc.cjs" }) -- only enable if root has .eslintrc.js or .eslintrc.cjs

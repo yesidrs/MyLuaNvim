@@ -168,7 +168,17 @@ return {
 
 		-- configure python server with plugin
 		lspconfig["pyright"].setup({
-      capabilities = capabilities,
+			capabilities = capabilities,
+		})
+
+		-- configure python server with plugin
+		lspconfig["html"].setup({
+			capabilities = capabilities,
+		})
+
+		-- configure python server with plugin
+		lspconfig["cssls"].setup({
+			capabilities = capabilities,
 		})
 	end,
 }

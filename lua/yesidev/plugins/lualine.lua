@@ -1,6 +1,5 @@
 return {
 	"nvim-lualine/lualine.nvim",
-	dependencies = { "nvim-tree/nvim-web-devicons" },
 	config = function()
 		local nvchad_icons = {
 			default = { left = "", right = " " },

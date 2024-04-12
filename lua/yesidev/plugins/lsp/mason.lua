@@ -11,8 +11,6 @@ return {
 		-- import mason-lspconfig
 		local mason_lspconfig = require("mason-lspconfig")
 
-		local mason_tool_installer = require("mason-tool-installer")
-
 		-- enable mason
 		mason.setup()
 
@@ -27,8 +25,8 @@ return {
 				"jsonls",
 				"tsserver",
 				"pyright",
-        "html",
-        "cssls"
+				"html",
+				"cssls",
 			},
 			-- auto-install configured servers (with lspconfig)
 			automatic_installation = true, -- not the same as ensure_installed

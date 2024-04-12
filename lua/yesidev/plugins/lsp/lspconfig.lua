@@ -151,33 +151,31 @@ return {
 			},
 		})
 
-		-- bashls
 		lspconfig["bashls"].setup({
 			capabilities = capabilities,
 		})
 
-		-- jsonls
 		lspconfig["jsonls"].setup({
 			capabilities = capabilities,
 		})
 
-		-- configure typescript server with plugin
 		lspconfig["tsserver"].setup({
 			capabilities = capabilities,
 		})
 
-		-- configure python server with plugin
 		lspconfig["pyright"].setup({
 			capabilities = capabilities,
 		})
 
-		-- configure python server with plugin
 		lspconfig["html"].setup({
 			capabilities = capabilities,
 		})
 
-		-- configure python server with plugin
 		lspconfig["cssls"].setup({
+			capabilities = capabilities,
+		})
+
+		lspconfig["angularls"].setup({
 			capabilities = capabilities,
 		})
 	end,

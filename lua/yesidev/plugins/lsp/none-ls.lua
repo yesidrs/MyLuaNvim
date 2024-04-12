@@ -4,6 +4,7 @@ return {
 	event = { "BufReadPre", "BufNewFile" }, -- to enable uncomment this
 	dependencies = {
 		"jay-babu/mason-null-ls.nvim",
+		"nvimtools/none-ls-extras.nvim",
 	},
 	config = function()
 		local mason_null_ls = require("mason-null-ls")
@@ -19,9 +20,12 @@ return {
 				"isort", -- python formatter
 				"black", -- python formatter
 				"mypy", -- python linter
-				"ruff", -- python linter
-				"eslint_d", -- js linter
 				"shfmt", -- bash formatter
+
+        -- Deprecated LSPs in none-ls 
+
+				"eslint_d", -- js linter
+				"ruff", -- python linter
 			},
 		})
 
@@ -54,8 +58,8 @@ return {
 				formatting.shfmt,
 
 				-- linters
-				diagnostics.ruff, -- python linter
-				diagnostics.eslint_d.with({ -- js/ts linter
+				require("none-ls.diagnostics.ruff"),
+				require("none-ls.diagnostics.eslint_d").with({ -- js/ts linter
 					condition = function(utils)
 						return utils.root_has_file({ ".eslintrc.js", ".eslintrc.cjs" }) -- only enable if root has .eslintrc.js or .eslintrc.cjs
 					end,

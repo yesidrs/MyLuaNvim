@@ -20,11 +20,11 @@ return {
 					color = "#dcbf51",
 					name = "favicon",
 				},
-        html = {
-          icon = "",
-          color = "#c5472a",
-          name = "html",
-        },
+				html = {
+					icon = "",
+					color = "#c5472a",
+					name = "html",
+				},
 			},
 			override_by_filename = {
 				[".gitignore"] = {
@@ -62,11 +62,21 @@ return {
 					color = "#2186c0",
 					name = "tsconfig.json",
 				},
-        ["bun.lockb"] = {
-          icon = "󰈡",
-          color = "#dcd7cb",
-          name = "bun.lockb",
-        },
+				["bun.lockb"] = {
+					icon = "󰈡",
+					color = "#dcd7cb",
+					name = "bun.lockb",
+				},
+				["azure-pipelines.yml"] = {
+					icon = "",
+					color = "#2788de",
+					name = "azure",
+				},
+				["azure-pipelines.yaml"] = {
+					icon = "",
+					color = "#2788de",
+					name = "azure",
+				},
 			},
 			override_by_extension = {
 				["component.ts"] = {
@@ -74,11 +84,31 @@ return {
 					color = "#027bc0",
 					name = "angular",
 				},
-        ["routes.ts"] = {
-          icon = "󰑪",
-          color = "#3a8f47",
-          name = "routing",
-        },
+				["routes.ts"] = {
+					icon = "󰑪",
+					color = "#3a8f47",
+					name = "routing",
+				},
+				["yml"] = {
+					icon = "󰈙",
+					color = "#e95a5f",
+					name = "yml",
+				},
+				["yaml"] = {
+					icon = "󰈙",
+					color = "#e95a5f",
+					name = "yaml",
+				},
+				["sql"] = {
+					icon = "",
+					color = "#e3b932",
+					name = "database",
+				},
+				["json"] = {
+					icon = "",
+					color = "#e3b932",
+					name = "json",
+				},
 			},
 		})
 	end,

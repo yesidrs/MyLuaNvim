@@ -3,9 +3,8 @@ return {
 	event = { "BufReadPre", "BufNewFile" },
 	dependencies = {
 		"hrsh7th/cmp-nvim-lsp",
-		{
-			"smjonas/inc-rename.nvim",
-		},
+		"smjonas/inc-rename.nvim",
+		"joeveiga/ng.nvim",
 	},
 	config = function()
 		-- import lspconfig plugin
@@ -178,5 +177,16 @@ return {
 		lspconfig["angularls"].setup({
 			capabilities = capabilities,
 		})
+
+		local ng = require("ng")
+
+		opts.desc = "Go to template for component"
+		vim.keymap.set("n", "<leader>at", ng.goto_template_for_component, opts)
+
+    opts.desc = "Go to component with template file"
+		vim.keymap.set("n", "<leader>ac", ng.goto_component_with_template_file, opts)
+
+    opts.desc = "Get template TCB"
+		vim.keymap.set("n", "<leader>aT", ng.get_template_tcb, opts)
 	end,
 }

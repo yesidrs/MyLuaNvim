@@ -22,7 +22,7 @@ return {
 				"mypy", -- python linter
 				"shfmt", -- bash formatter
 
-        -- Deprecated LSPs in none-ls 
+				-- Deprecated LSPs in none-ls
 
 				"eslint_d", -- js linter
 				"ruff", -- python linter

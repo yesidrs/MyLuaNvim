@@ -64,5 +64,5 @@ set.spelllang = "en_us,es"
 set.spell = true
 
 -- change line numbers color
-vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "#a2a9c1" })
-vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "#a2a9c1" })
+-- vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "#a2a9c1" })
+-- vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "#a2a9c1" })

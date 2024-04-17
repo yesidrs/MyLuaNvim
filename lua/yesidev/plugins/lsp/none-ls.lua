@@ -21,9 +21,9 @@ return {
 				"black", -- python formatter
 				"mypy", -- python linter
 				"shfmt", -- bash formatter
-        "gofumpt", -- go formatter
-        "golines", -- go formatter
-        "goimports-reviser", -- go imports formatter
+				"gofumpt", -- go formatter
+				"golines", -- go formatter
+				"goimports", -- go imports formatter
 
 				-- Deprecated LSPs in none-ls
 
@@ -59,9 +59,9 @@ return {
 					extra_args = { "--line-length", "80" },
 				}), -- python formatter
 				formatting.shfmt,
-        formatting.gofumpt,
-        formatting.goimports_reviser,
-        formatting.goline,
+				formatting.gofumpt,
+				formatting.goimports,
+				formatting.golines,
 
 				-- linters
 				require("none-ls.diagnostics.ruff"),
@@ -80,9 +80,29 @@ return {
 						group = augroup,
 						buffer = bufnr,
 						callback = function()
-							vim.lsp.buf.format({
-								bufnr = bufnr,
-							})
+							local ignore_list = { "lazy-lock.json" }
+							local bufname = vim.api.nvim_buf_get_name(bufnr)
+
+							local filename = bufname:match("^.+/(.+)$")
+
+							local format_file = true
+
+							for _, ignore_file in ipairs(ignore_list) do
+								if filename == ignore_file then
+									format_file = false
+									break
+								end
+							end
+
+							if vim.g.auto_format == 1 and format_file then
+								vim.lsp.buf.format({
+									filter = function(client)
+										--  only use null-ls for formatting instead of lsp server
+										return client.name == "null-ls"
+									end,
+									bufnr = bufnr,
+								})
+							end
 						end,
 					})
 				end
@@ -106,5 +126,8 @@ return {
 		opts.desc = "format selected"
 		vim.keymap.set("v", "f", callback, opts)
 		-- vim.keymap.set("v", "f", "<cmd>lua vim.lsp.buf.format{async=true}<CR>", opts)
+
+		opts.desc = "enable/disable auto format"
+		vim.keymap.set("n", "<leader>af", "<cmd>let g:auto_format = !g:auto_format<CR>", opts)
 	end,
 }

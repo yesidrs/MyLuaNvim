@@ -17,16 +17,25 @@ return {
 		mason_lspconfig.setup({
 			-- list of servers for mason to install
 			ensure_installed = {
+				-- languages
 				"azure_pipelines_ls",
 				"bashls",
 				"cssls",
-        "gopls",
 				"html",
 				"jsonls",
 				"lua_ls",
 				"pyright",
 				"terraformls",
 				"tsserver",
+				"gopls",
+
+				-- frameworks
+				"angularls",
+				"tailwindcss",
+
+				-- debbugers
+				"delve",
+				"bash-debug-adapter",
 			},
 			-- auto-install configured servers (with lspconfig)
 			automatic_installation = true, -- not the same as ensure_installed

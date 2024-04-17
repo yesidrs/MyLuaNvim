@@ -22,7 +22,6 @@ set.termguicolors = true
 set.background = "dark"
 set.signcolumn = "yes"
 
-
 -- remove auto comment below
 vim.cmd([[autocmd FileType * set formatoptions-=ro]])
 
@@ -30,19 +29,19 @@ vim.cmd([[autocmd FileType * set formatoptions-=ro]])
 set.backspace = "indent,eol,start"
 
 -- clipboard
-if vim.fn.has "wsl" == 1 then
-  vim.g.clipboard = {
-    name = "WslClipboard",
-    copy = {
-      ["+"] = "clip.exe",
-      ["*"] = "clip.exe",
-    },
-    paste = {
-      ["+"] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
-      ["*"] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
-    },
-    cache_enabled = 0,
-  }
+if vim.fn.has("wsl") == 1 then
+	vim.g.clipboard = {
+		name = "WslClipboard",
+		copy = {
+			["+"] = "clip.exe",
+			["*"] = "clip.exe",
+		},
+		paste = {
+			["+"] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+			["*"] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+		},
+		cache_enabled = 0,
+	}
 end
 set.clipboard:append("unnamedplus")
 
@@ -62,6 +61,9 @@ set.showmode = false
 -- check speller
 set.spelllang = "en_us,es"
 set.spell = true
+
+-- own global variables
+vim.g.auto_format = 1
 
 -- change line numbers color
 -- vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "#a2a9c1" })

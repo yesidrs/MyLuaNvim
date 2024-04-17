@@ -20,12 +20,12 @@ return {
 				"azure_pipelines_ls",
 				"bashls",
 				"cssls",
+        "gopls",
 				"html",
 				"jsonls",
 				"lua_ls",
 				"pyright",
 				"terraformls",
-				"tsserver",
 				"tsserver",
 			},
 			-- auto-install configured servers (with lspconfig)

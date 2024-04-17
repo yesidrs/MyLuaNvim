@@ -2,7 +2,7 @@ return {
 	{
 		"CopilotC-Nvim/CopilotChat.nvim",
 		branch = "canary",
-    lazy = false,
+		lazy = false,
 		dependencies = {
 			{ "nvim-telescope/telescope.nvim" },
 			{ "zbirenbaum/copilot.lua" }, -- or github/copilot.vim
@@ -26,7 +26,7 @@ return {
 			},
 			-- Quick chat with Copilot using visual selection
 			{
-				"<leader>ccv",
+				"<leader>cc",
 				function()
 					local input = vim.fn.input("Quick Chat: ")
 					if input ~= "" then
@@ -34,29 +34,14 @@ return {
 					end
 				end,
 				desc = "CopilotChat - Quick chat",
-        mode = "v",
+				mode = "v",
 			},
-      {
-        "<leader>cct",
-        function ()
-          require("CopilotChat").toggle()
-        end
-      }
+			{
+				"<leader>cct",
+				function()
+					require("CopilotChat").toggle()
+				end,
+			},
 		},
-		-- See Commands section for default commands if you want to lazy load on them
-
-		-- vim.keymap.set(
-		-- 	"n",
-		-- 	"<leader>ccq",
-		-- 	"<cmd>lua require('CopilotChat').ask(vim.fn.input('Quick Chat: '), { selection = require('CopilotChat.select').buffer })<cr>",
-		-- 	{ noremap = true, silent = true, desc = "CopilotChat - Quick chat" }
-		-- ),
-		--
-		-- vim.keymap.set(
-		-- 	"v",
-		-- 	"<leader>ccv",
-		-- 	"<cmd>lua require('CopilotChat').ask(vim.fn.input('Quick Chat: '), { selection = require('CopilotChat.select').visual })<cr>",
-		-- 	{ noremap = true, silent = true, desc = "CopilotChat - Quick chat" }
-		-- ),
 	},
 }

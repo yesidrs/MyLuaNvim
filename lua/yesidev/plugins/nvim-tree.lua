@@ -44,8 +44,8 @@ return {
 						folder = {
 							arrow_closed = "", -- arrow when folder is closed
 							arrow_open = "", -- arrow when folder is open
-              default = "",
-              open = "",
+							default = "",
+							open = "",
 						},
 						git = {
 							unstaged = "M",

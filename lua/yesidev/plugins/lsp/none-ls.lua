@@ -25,8 +25,11 @@ return {
 				"golines", -- go formatter
 				"goimports", -- go imports formatter
 
-				-- Deprecated LSPs in none-ls
+				-- debbugers
+				"delve",
+				"bashdb",
 
+				-- Deprecated LSPs in none-ls
 				"eslint_d", -- js linter
 				"ruff", -- python linter
 			},

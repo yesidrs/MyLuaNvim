@@ -132,12 +132,16 @@ return {
 
 		lspconfig["azure_pipelines_ls"].setup({
 			capabilities = capabilities,
+			root_dir = function()
+				return vim.fn.getcwd()
+			end,
 			settings = {
 				yaml = {
 					schemas = {
 						["https://raw.githubusercontent.com/microsoft/azure-pipelines-vscode/master/service-schema.json"] = {
 							"/azure-pipeline*.y*l",
 							"/*.azure*",
+							"/build.y*l",
 							"Azure-Pipelines/**/*.y*l",
 							"Pipelines/*.y*l",
 							"*.y*l",

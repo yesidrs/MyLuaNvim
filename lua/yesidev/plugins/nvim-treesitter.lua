@@ -81,6 +81,7 @@ return {
 
 				highlight = {
 					enable = true,
+					disable = { "html" },
 				},
 				-- enable indentation
 				indent = { enable = true },
@@ -88,16 +89,18 @@ return {
 				autotag = { enable = true },
 				-- ensure these language parsers are installed
 				ensure_installed = {
-					"json",
-					"yaml",
-					"markdown",
-					"markdown_inline",
 					"bash",
-					"lua",
-					"vim",
 					"dockerfile",
 					"gitignore",
+					"go",
+					"html",
+					"json",
+					"lua",
+					"markdown",
+					"markdown_inline",
 					"terraform",
+					"vim",
+					"yaml",
 				},
 				-- enable nvim-ts-context-commentstring plugin for commenting tsx and jsx
 				context_commentstring = {

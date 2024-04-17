@@ -178,6 +178,10 @@ return {
 			capabilities = capabilities,
 		})
 
+		lspconfig["tailwindcss"].setup({
+			capabilities = capabilities,
+		})
+
 		lspconfig["angularls"].setup({
 			capabilities = capabilities,
 		})

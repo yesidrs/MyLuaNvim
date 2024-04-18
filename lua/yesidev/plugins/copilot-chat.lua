@@ -10,6 +10,7 @@ return {
 		},
 		opts = {
 			-- See Configuration section for rest
+			show_help = false,
 		},
 		keys = {
 			-- Show help actions with telescope
@@ -17,10 +18,7 @@ return {
 			{
 				"<leader>ccq",
 				function()
-					local input = vim.fn.input("Quick Chat: ")
-					if input ~= "" then
-						require("CopilotChat").ask(input, { selection = require("CopilotChat.select").buffer })
-					end
+					require("CopilotChat").ask("", { selection = require("CopilotChat.select").buffer })
 				end,
 				desc = "CopilotChat - Quick chat",
 			},
@@ -41,6 +39,7 @@ return {
 				function()
 					require("CopilotChat").toggle()
 				end,
+				desc = "CopilotChat - Toggle",
 			},
 		},
 	},

@@ -11,8 +11,14 @@ return {
 		-- keybind options
 		local opts = { noremap = true, silent = true }
 
+		local function hopShortcut(mode)
+			return vim.keymap.set(mode, "<leader>m", "<cmd>HopChar2<CR>", opts)
+		end
+
 		-- set keybinds
-		opts.desc = "HopChar before cursor"
-		vim.keymap.set("n", "<leader>m", "<cmd>HopChar2<CR>", opts)
+		for _, mode in ipairs({ "n", "v" }) do
+			opts.desc = "Hop"
+			hopShortcut(mode)
+		end
 	end,
 }

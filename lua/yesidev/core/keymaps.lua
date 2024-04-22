@@ -15,7 +15,6 @@ local function nmap(shortcut, command, desc)
 	map("n", shortcut, command, desc)
 end
 
-
 local function imap(shortcut, command, desc)
 	map("i", shortcut, command, desc)
 end
@@ -43,3 +42,6 @@ nmap("<C-l>", "<cmd>tmuxNavigateRight<CR>", "window right")
 -- begin and end of line
 noremap("<leader>h", "^", "begin of line")
 noremap("<leader>l", "g_", "end of line")
+
+-- for go vars
+imap(",.", ":=", "go var")

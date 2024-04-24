@@ -22,11 +22,15 @@ set.termguicolors = true
 set.background = "dark"
 set.signcolumn = "yes"
 
--- views can only be fully collapsed with the global statusline
-vim.opt.laststatus = 3
--- Default splitting will cause your main splits to jump when opening an edgebar.
--- To prevent this, set `splitkeep` to either `screen` or `topline`.
-vim.opt.splitkeep = "screen"
+-- for copilot chat
+set.laststatus = 3
+set.splitkeep = "screen"
+
+-- folding
+set.foldenable = true
+set.foldcolumn = "1"
+set.foldlevel = 99
+set.foldlevelstart = 99
 
 -- remove auto comment below
 vim.cmd([[autocmd FileType * set formatoptions-=ro]])

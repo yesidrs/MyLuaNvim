@@ -20,7 +20,7 @@ return {
 			vim.keymap.set("n", "l", api.node.open.edit, opts("open folder"))
 			vim.keymap.set("n", "h", api.node.navigate.parent_close, opts("close folder"))
 			vim.keymap.set("n", "v", api.node.open.vertical, opts("vertical split"))
-			vim.keymap.set("n", "w", api.node.open.horizontal, opts("horizontal split"))
+			vim.keymap.set("n", "_", api.node.open.horizontal, opts("horizontal split"))
 			vim.keymap.set("n", "o", api.node.open.preview, opts("preview"))
 			vim.keymap.set("n", "M", api.marks.bulk.move, opts("move file"))
 			vim.keymap.set("n", "t", api.node.open.tab, opts("open new tab"))

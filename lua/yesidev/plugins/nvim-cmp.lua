@@ -69,6 +69,10 @@ return {
 					select = false,
 				}),
 			}),
+
+			-- auto-select the first completion item
+			preselect = cmp.PreselectMode.None,
+
 			-- sources for autocompletion
 			sources = cmp.config.sources({
 				{ name = "copilot" },

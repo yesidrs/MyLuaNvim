@@ -1,6 +1,6 @@
 {
   "fmt.Sprintf": {
-    "prefix": "fs",
+    "prefix": "fsf",
     "body": "fmt.Sprintf(\"$1\", ${2:var})",
     "description": "Snippet for fmt.Srintf()"
   }

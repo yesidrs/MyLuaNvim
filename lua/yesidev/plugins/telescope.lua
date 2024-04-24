@@ -6,6 +6,7 @@ return {
 		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 		"nvim-telescope/telescope-ui-select.nvim",
 	},
+	lazy = { "BufWinEnter" },
 	config = function()
 		-- import telescope plugin safely
 		local telescope = require("telescope")
@@ -79,7 +80,7 @@ return {
 			-- configure custom mappings
 			defaults = {
 				-- path_display = { "tail" },
-        file_ignore_patterns = { "node_modules", ".git" },
+				file_ignore_patterns = { "node_modules", ".git" },
 				path_display = personal_path_display,
 				mappings = {
 					i = {

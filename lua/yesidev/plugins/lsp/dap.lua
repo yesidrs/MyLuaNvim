@@ -6,6 +6,7 @@ return {
 		"nvim-neotest/nvim-nio",
 		"leoluz/nvim-dap-go",
 	},
+	event = { "BufReadPre", "BufNewFile" },
 	config = function()
 		local dap = require("dap")
 		local dapui = require("dapui")

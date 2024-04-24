@@ -1,5 +1,6 @@
 return {
 	"nvim-tree/nvim-tree.lua",
+	event = { "BufWinEnter" },
 	config = function()
 		local nvimtree = require("nvim-tree")
 

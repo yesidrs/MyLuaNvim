@@ -2,7 +2,7 @@ return {
 	{
 		"CopilotC-Nvim/CopilotChat.nvim",
 		branch = "canary",
-		lazy = false,
+		event = { "BufWinEnter" },
 		dependencies = {
 			{ "nvim-telescope/telescope.nvim" },
 			{ "zbirenbaum/copilot.lua" }, -- or github/copilot.vim

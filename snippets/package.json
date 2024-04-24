@@ -9,6 +9,10 @@
       {
         "language": "html",
         "path": "./angular/html.json"
+      },
+      {
+        "language": "go",
+        "path": "./go/go.json"
       }
     ]
   }

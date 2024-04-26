@@ -34,6 +34,13 @@ return {
 		require("luasnip.loaders.from_vscode").lazy_load({ paths = { "~/.config/nvim/snippets/" } })
 
 		vim.opt.completeopt = "menu,menuone,noselect"
+
+		-- luasnip keymaps
+		local keymap = vim.keymap
+		local opt = { noremap = true, silent = true }
+		keymap.set("i", "<Right>", "<cmd>lua require'luasnip'.jump(1)<Cr>", opt)
+		keymap.set("i", "<Left>", "<cmd>lua require'luasnip'.jump(-1)<Cr>", opt)
+
 		cmp.setup({
 			snippet = {
 				expand = function(args)

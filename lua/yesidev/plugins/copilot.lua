@@ -1,7 +1,10 @@
 return {
-	"zbirenbaum/copilot.lua",
-	cmd = "Copilot",
-	event = { "InsertEnter" },
+	"zbirenbaum/copilot-cmp",
+	dependencies = {
+		"zbirenbaum/copilot.lua",
+	},
+	event = { "InsertEnter", "LspAttach" },
+	fix_pairs = true,
 	config = function()
 		require("copilot").setup({
 			suggestion = { enabled = false },
@@ -11,5 +14,7 @@ return {
 				yml = true,
 			},
 		})
+
+		require("copilot_cmp").setup()
 	end,
 }

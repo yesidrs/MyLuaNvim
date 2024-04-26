@@ -1,7 +1,6 @@
 return {
 	"ThePrimeagen/harpoon",
 	branch = "harpoon2",
-	dependencies = { "nvim-lua/plenary.nvim" },
 	config = function()
 		local keymap = vim.keymap -- for conciseness
 		local opts = { noremap = true, silent = true }

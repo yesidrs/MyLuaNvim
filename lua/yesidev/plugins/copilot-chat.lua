@@ -5,8 +5,6 @@ return {
 		event = { "BufWinEnter" },
 		dependencies = {
 			{ "nvim-telescope/telescope.nvim" },
-			{ "zbirenbaum/copilot.lua" }, -- or github/copilot.vim
-			{ "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
 		},
 		opts = {
 			-- See Configuration section for rest

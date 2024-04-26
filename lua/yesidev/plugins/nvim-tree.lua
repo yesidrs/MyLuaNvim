@@ -18,6 +18,7 @@ return {
 			-- default mappings
 			api.config.mappings.default_on_attach(bufnr)
 
+			vim.keymap.set("n", "~", api.tree.change_root_to_node, opts("CD"))
 			vim.keymap.set("n", "l", api.node.open.edit, opts("open folder"))
 			vim.keymap.set("n", "h", api.node.navigate.parent_close, opts("close folder"))
 			vim.keymap.set("n", "v", api.node.open.vertical, opts("vertical split"))

@@ -11,8 +11,9 @@ return {
 				bold = true,
 				italic = {
 					strings = false,
-					comments = false,
-					operators = false,
+					emphasis = true,
+					comments = true,
+					operators = true,
 					folds = true,
 				},
 				strikethrough = true,

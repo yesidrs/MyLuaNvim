@@ -178,6 +178,10 @@ return {
 			capabilities = capabilities,
 		})
 
+		lspconfig["emmet_ls"].setup({
+			capabilities = capabilities,
+		})
+
 		lspconfig["cssls"].setup({
 			capabilities = capabilities,
 		})

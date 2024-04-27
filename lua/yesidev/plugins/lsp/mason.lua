@@ -22,6 +22,7 @@ return {
 				"azure_pipelines_ls",
 				"bashls",
 				"cssls",
+				"emmet_ls",
 				"html",
 				"jsonls",
 				"lua_ls",

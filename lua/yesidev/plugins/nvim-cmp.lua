@@ -38,8 +38,8 @@ return {
 		-- luasnip keymaps
 		local keymap = vim.keymap
 		local opt = { noremap = true, silent = true }
-		keymap.set("i", "<Right>", "<cmd>lua require'luasnip'.jump(1)<Cr>", opt)
-		keymap.set("i", "<Left>", "<cmd>lua require'luasnip'.jump(-1)<Cr>", opt)
+		keymap.set("i", "<Up>", "<cmd>lua require'luasnip'.jump(1)<Cr>", opt)
+		keymap.set("i", "<Down>", "<cmd>lua require'luasnip'.jump(-1)<Cr>", opt)
 
 		cmp.setup({
 			snippet = {

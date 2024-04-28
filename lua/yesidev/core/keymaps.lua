@@ -45,3 +45,6 @@ noremap("<leader>l", "g_", "end of line")
 
 -- for go vars
 imap(",.", ":=", "go var")
+
+-- persistent copy
+noremap("<leader>p", '"0p', "paste with persistent copy")

@@ -18,7 +18,7 @@ return {
 				function()
 					require("CopilotChat").ask("", { selection = require("CopilotChat.select").buffer })
 				end,
-				desc = "CopilotChat - Quick chat",
+				desc = "CopilotChat - Toggle",
 			},
 			-- Quick chat with Copilot using visual selection
 			{
@@ -33,11 +33,14 @@ return {
 				mode = "v",
 			},
 			{
-				"<leader>cct",
-				function()
-					require("CopilotChat").toggle()
-				end,
-				desc = "CopilotChat - Toggle",
+				"<leader>ccs",
+				":CopilotChatSave ",
+				desc = "CopilotChat - Save",
+			},
+			{
+				"<leader>ccl",
+				":CopilotChatLoad ",
+				desc = "CopilotChat - Load",
 			},
 		},
 	},

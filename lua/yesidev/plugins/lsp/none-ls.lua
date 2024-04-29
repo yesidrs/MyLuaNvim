@@ -52,7 +52,13 @@ return {
 				--  "formatting.prettier.with({disabled_filetypes: {}})" (see null-ls docs)
 				formatting.prettier.with({
 					extra_filetypes = { "svelte" },
-					extra_args = { "--single-quote", "--no-semi" },
+					extra_args = {
+						"--single-quote",
+						"--no-semi",
+						"--print-width",
+						"120",
+						"--bracket-same-line",
+					},
 				}), -- js/ts formatter
 
 				-- formatters

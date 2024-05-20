@@ -138,13 +138,16 @@ return {
 			settings = {
 				yaml = {
 					schemas = {
-						["https://raw.githubusercontent.com/microsoft/azure-pipelines-vscode/master/service-schema.json"] = {
+						["https://raw.githubusercontent.com/SchemaStore/schemastore/master/src/schemas/json/github-workflow.json"] = {
+							".github/**/*.y*l",
+						},
+						["https://raw.githubusercontent.com/microsoft/azure-pipelines-vscode/main/service-schema.json"] = {
 							"/azure-pipeline*.y*l",
-							"/*.azure*",
+							-- "/*.azure*",
 							"/build.y*l",
-							"Azure-Pipelines/**/*.y*l",
-							"Pipelines/*.y*l",
-							"*.y*l",
+							-- "Azure-Pipelines/**/*.y*l",
+							-- "Pipelines/*.y*l",
+							-- "*.y*l",
 						},
 					},
 				},
@@ -191,6 +194,10 @@ return {
 		})
 
 		lspconfig["angularls"].setup({
+			capabilities = capabilities,
+		})
+
+		lspconfig["terraformls"].setup({
 			capabilities = capabilities,
 		})
 

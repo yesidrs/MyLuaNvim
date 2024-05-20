@@ -1,6 +1,6 @@
 return {
 	"ThePrimeagen/harpoon",
-	branch = "harpoon2",
+	branch = "master",
 	config = function()
 		local keymap = vim.keymap -- for conciseness
 		local opts = { noremap = true, silent = true }

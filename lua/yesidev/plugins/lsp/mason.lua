@@ -29,7 +29,7 @@ return {
 				"pyright",
 				"terraformls",
 				"tsserver",
-				"gopls",
+				-- "gopls",
 
 				-- frameworks
 				"angularls",

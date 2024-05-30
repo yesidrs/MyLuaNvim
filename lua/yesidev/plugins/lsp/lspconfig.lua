@@ -169,9 +169,9 @@ return {
 			capabilities = capabilities,
 		})
 
-		lspconfig["gopls"].setup({
-			capabilities = capabilities,
-		})
+		-- lspconfig["gopls"].setup({
+		-- 	capabilities = capabilities,
+		-- })
 
 		lspconfig["pyright"].setup({
 			capabilities = capabilities,
@@ -193,23 +193,23 @@ return {
 			capabilities = capabilities,
 		})
 
-		lspconfig["angularls"].setup({
-			capabilities = capabilities,
-		})
+		-- lspconfig["angularls"].setup({
+		-- 	capabilities = capabilities,
+		-- })
 
 		lspconfig["terraformls"].setup({
 			capabilities = capabilities,
 		})
 
-		local ng = require("ng")
-
-		opts.desc = "Go to template for component"
-		vim.keymap.set("n", "<leader>at", ng.goto_template_for_component, opts)
-
-		opts.desc = "Go to component with template file"
-		vim.keymap.set("n", "<leader>ac", ng.goto_component_with_template_file, opts)
-
-		opts.desc = "Get template TCB"
-		vim.keymap.set("n", "<leader>aT", ng.get_template_tcb, opts)
+		-- local ng = require("ng")
+		--
+		-- opts.desc = "Go to template for component"
+		-- vim.keymap.set("n", "<leader>at", ng.goto_template_for_component, opts)
+		--
+		-- opts.desc = "Go to component with template file"
+		-- vim.keymap.set("n", "<leader>ac", ng.goto_component_with_template_file, opts)
+		--
+		-- opts.desc = "Get template TCB"
+		-- vim.keymap.set("n", "<leader>aT", ng.get_template_tcb, opts)
 	end,
 }

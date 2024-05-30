@@ -80,18 +80,28 @@ return {
 			virtual_text = true,
 		})
 
+		-- enable/disable diagnostics
+		vim.g.diagnostic_enabled = true
+
 		vim.api.nvim_exec(
 			[[
-    augroup azure_pipelines_config
-        autocmd!
-        autocmd BufEnter,BufRead *.yaml lua vim.diagnostic.config({ virtual_text = false })
-        autocmd BufEnter,BufRead *.yml lua vim.diagnostic.config({ virtual_text = false })
-        autocmd BufLeave *.yml lua vim.diagnostic.config({ virtual_text = true })
-        autocmd BufLeave *.yaml lua vim.diagnostic.config({ virtual_text = true })
-    augroup END
-      ]],
+    function! ToggleDiagnostic()
+        if g:diagnostic_enabled
+            lua vim.diagnostic.disable()
+        else
+            lua vim.diagnostic.enable()
+        endif
+        let g:diagnostic_enabled = !g:diagnostic_enabled
+    endfunction
+    ]],
 			false
 		)
+
+		-- shortcut
+		opts.desc = "Enable/disable diagnostics"
+		vim.keymap.set("n", "<leader>ad", "<cmd>:call ToggleDiagnostic()<CR>", opts)
+
+		--## LSP Servers ##--
 
 		-- configure lua server (with special settings)
 		lspconfig["lua_ls"].setup({
@@ -157,6 +167,16 @@ return {
 			},
 		})
 
+		-- disable virtual text for azure pipelines
+		vim.api.nvim_exec(
+			[[
+    augroup azure_pipelines_config
+        autocmd!
+        autocmd BufEnter *.y*ml lua vim.diagnostic.config({ virtual_text = false })
+      ]],
+			false
+		)
+
 		lspconfig["bashls"].setup({
 			capabilities = capabilities,
 		})
@@ -200,6 +220,18 @@ return {
 		lspconfig["terraformls"].setup({
 			capabilities = capabilities,
 		})
+
+		-- disable diagnostics for tfvars
+		vim.api.nvim_exec(
+			[[
+    augroup disable_tfvars_diagnostic
+        autocmd!
+        autocmd BufEnter *.tfvars lua vim.diagnostic.disable()
+        autocmd BufEnter *.tf lua vim.diagnostic.enable()
+    augroup END
+      ]],
+			false
+		)
 
 		local ng = require("ng")
 

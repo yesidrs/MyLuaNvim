@@ -8,6 +8,10 @@ return {
 					tfvars = "terraform",
 					tfstate = "json",
 				},
+				complex = {
+					-- Set the filetype of any full filename matching the regex to gitconfig
+					["Dockerfile.*"] = "dockerfile", -- Included in the plugin
+				},
 			},
 		})
 	end,

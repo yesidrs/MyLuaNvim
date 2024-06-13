@@ -7,8 +7,7 @@ alias ll "lsd -l"
 alias la "lsd -a"
 alias ls "lsd"
 
-fzf_configure_bindings --directory=\cf
-fzf_configure_bindings --variables=\e\cv
+fzf_configure_bindings --directory=\cf --variables=\e\cv
 
 set -gx VOLTA_HOME "$HOME/.volta"
 set -gx PATH "$VOLTA_HOME/bin" $PATH

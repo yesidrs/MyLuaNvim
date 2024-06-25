@@ -30,7 +30,7 @@ return {
 			})
 
 			-- load the colorscheme here
-			vim.cmd.colorscheme("gruvbox")
+			-- vim.cmd.colorscheme("gruvbox")
 		end,
 	},
 }

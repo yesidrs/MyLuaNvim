@@ -59,7 +59,3 @@ set.spell = true
 
 -- own global variables
 vim.g.auto_format = 1
-
--- change line numbers color
--- vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "#a2a9c1" })
--- vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "#a2a9c1" })

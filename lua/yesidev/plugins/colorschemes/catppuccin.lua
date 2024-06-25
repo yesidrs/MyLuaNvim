@@ -55,7 +55,12 @@ return {
 			})
 
 			-- load the colorscheme here
-			-- vim.cmd.colorscheme("catppuccin")
+			vim.cmd.colorscheme("catppuccin")
+
+			-- change line numbers color
+			vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "#6c7086" })
+			vim.api.nvim_set_hl(0, "LineNr", { fg = "#6c7086" })
+			vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "#6c7086" })
 		end,
 	},
 }

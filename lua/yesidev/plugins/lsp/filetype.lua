@@ -7,6 +7,7 @@ return {
 					tf = "terraform",
 					tfvars = "terraform",
 					tfstate = "json",
+					sh = "bash",
 				},
 				complex = {
 					-- Set the filetype of any full filename matching the regex to gitconfig
